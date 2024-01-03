@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Starter Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Drug Classification Project</h1>
+
+    <div class="form">
+        <form action="/predict" method="POST">
+            <div class="custom-select">
+            <label>Gender:</label>
+            <select name="gender">
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+            </select>
+            <br>
+            <label>Blood Pressure:</label>
+            <select name="bp">
+                <option value="NORMAL">Normal</option>
+                <option value="LOW">Low</option>
+                <option value="HIGH">High</option>
+            </select>
+            <br>
+            <label>Cholestrol:</label>
+            <select name="cholesterol">
+                <option value="NORMAL">Normal</option>
+                <option value="HIGH">High</option>
+            </select>
+            <br>
+            <label>Age:</label>
+            <select name="age">
+                <option value=">60s">Greater than 60s</option>
+                <option value="60s">60s</option>
+                <option value="50s">50s</option>
+                <option value="40s">40s</option>
+                <option value="30s">30s</option>
+                <option value="20">20s</option>
+                <option value="<20s">Less Than 20s</option>
+            </select>
+            <br>
+            <label>Sodium to Pottasium in Blood:</label>
+            <select name="natok">
+                <option value=">30">Greater than 30</option>
+                <option value="20-30">20-30</option>
+                <option value="10-20">10-20</option>
+                <option value="<10">Less than 10</option>
+
+            </select>
+            <br>
+            </div>
+            <input style="color:white; background-color:#3A3E59; border-radius:5px; width:130px; height:30px; margin-top:5px;font-weight:bold;  font-size: 20px;  cursor: pointer;" type="submit" value="Predict">
+        </form>
+    </div>
+</div>
+{% endblock %}
